@@ -65,7 +65,7 @@ fun NetworkVideoContainer.asDomainModel(): List<Video> {
     }
 }
 
-fun NetworkVideoContainer.asDatabaseModel():List<DatabaseVideo>{
+fun NetworkVideoContainer.asDatabaseModel():Array<DatabaseVideo>{
     return videos.map {
         DatabaseVideo(
                 title = it.title,
@@ -74,5 +74,5 @@ fun NetworkVideoContainer.asDatabaseModel():List<DatabaseVideo>{
                 updated = it.updated,
                 thumbnail = it.thumbnail
         )
-    }
+    }.toTypedArray()
 }
